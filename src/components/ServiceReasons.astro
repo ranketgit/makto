@@ -1,0 +1,58 @@
+---
+const reasons = [
+  {
+    title: "Expertise Technique",
+    desc: "Bénéficiez de l’expertise technique de notre équipe d’ingénieurs chevronnés, qui réalisent une étude approfondie de vos besoins.",
+    icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+  },
+  {
+    title: "Large Gamme de Produits",
+    desc: "Accédez à une vaste sélection de produits de qualité supérieure provenant de marques renommées telles que Daikin, DAB pumps et VITRA.",
+    icon: "M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
+  },
+  {
+    title: "Formation Professionnelle",
+    desc: "Profitez de formations avancées pour les installateurs, garantissant une installation professionnelle conforme aux normes de sécurité.",
+    icon: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+  },
+  {
+    title: "Flexibilité et Location",
+    desc: "Disposez de solutions flexibles avec nos options de location courte et moyenne durée, idéales pour les projets temporaires.",
+    icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+  }
+];
+---
+
+<section class="py-24 bg-white relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-[var(--color-secondary)] mb-4">
+        Pourquoi choisir Makto ?
+      </h2>
+      <div class="h-1 w-24 bg-[var(--color-primary)] mx-auto"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {reasons.map((reason) => (
+        <div class="bg-[var(--color-bg-light)] rounded-xl p-8 hover:-translate-y-2 transition-transform duration-300 border border-transparent hover:border-[var(--color-primary)]/20 group">
+          
+          <div class="w-14 h-14 bg-white rounded-lg shadow-md flex items-center justify-center text-[var(--color-primary)] mb-6 group-hover:bg-[var(--color-primary)] group-hover:text-white transition-colors duration-300">
+            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={reason.icon} />
+            </svg>
+          </div>
+
+          <h3 class="text-xl font-bold text-[var(--color-secondary)] mb-3">
+            {reason.title}
+          </h3>
+          
+          <p class="text-gray-600 text-sm leading-relaxed">
+            {reason.desc}
+          </p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

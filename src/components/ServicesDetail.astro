@@ -1,0 +1,76 @@
+---
+const services = [
+  { 
+    title: "Climatisation", 
+    desc: "Solutions résidentielles et commerciales pour un confort optimal.",
+    img: "/homepage/services/1.jpg" 
+  },
+  { 
+    title: "Réfrigération", 
+    desc: "Équipements performants pour la conservation et la chaîne du froid.",
+    img: "/homepage/services/2.jpg" 
+  },
+  { 
+    title: "Plomberie & Sanitaire", 
+    desc: "Systèmes durables et équipements sanitaires de haute qualité.",
+    img: "/homepage/services/3.jpg" 
+  },
+  { 
+    title: "Moteurs & Pompes", 
+    desc: "Distribution de moteurs et solutions de pompage industrielles.",
+    img: "/homepage/services/4.jpg" 
+  },
+  { 
+    title: "Carrelage", 
+    desc: "Revêtements de sol et muraux pour tous types de projets.",
+    img: "/homepage/services/5.jpg" 
+  },
+  { 
+    title: "Formation & SAV", 
+    desc: "Service après-vente exemplaire et formation technique.",
+    img: "/homepage/services/6.jpg" 
+  }
+];
+---
+
+<section class="py-20 bg-[var(--color-bg-light)]" id="services">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-[var(--color-secondary)] mb-4">
+        Découvrez Nos Services
+      </h2>
+      <div class="h-1 w-20 bg-[var(--color-primary)]"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {services.map((service) => (
+        <div class="group bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+          
+          <div class="relative h-48 overflow-hidden">
+            <div class="absolute inset-0 bg-[var(--color-secondary)]/20 group-hover:bg-transparent transition z-10"></div>
+            <img 
+              src={service.img} 
+              alt={service.title} 
+              class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500"
+            />
+          </div>
+
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-[var(--color-secondary)] mb-2 group-hover:text-[var(--color-primary)] transition">
+              {service.title}
+            </h3>
+            <p class="text-gray-600 text-sm mb-4">
+              {service.desc}
+            </p>
+            <a href="#" class="inline-flex items-center text-[var(--color-primary)] font-semibold text-sm hover:underline">
+              En savoir plus
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

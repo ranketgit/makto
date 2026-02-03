@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import DetailedServices from '../components/DetailedServices.astro';
+import EngagementBlock from '../components/EngagementBlock.astro';
+import ServiceReasons from '../components/ServiceReasons.astro';
+
+const pageTitle = "Nos Services";
+---
+
+<Layout title={pageTitle} description="Découvrez nos services : Étude technique, choix matériel, formation et location.">
+    
+    <PageHero 
+        title="Nos Services & Solutions" 
+        subtitle="Une gamme complète de services pour répondre à vos besoins en climatisation, plomberie et énergie."
+        bgImage="/homepage/1.jpg"
+    />
+
+    <DetailedServices />
+    <ServiceReasons />
+    
+    <EngagementBlock />
+
+   
+
+    
+
+</Layout>
