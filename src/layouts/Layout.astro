@@ -6,24 +6,52 @@ import '../styles/global.css';
 interface Props {
 	title: string;
 	description?: string;
+    image?: string;
+    canonicalURL?: string;
 }
+
+// 1. Defaul Values
+const siteName = "Makto Distribution";
+const defaultDescription = "Votre Partenaire Logistique de Confiance en Afrique. Climatisation, Plomberie, Sanitaire et Énergie.";
 
 const { 
 	title, 
-	description = "Votre Partenaire Logistique de Confiance en Afrique. Optimisez votre distribution avec des solutions fiables." 
+	description = defaultDescription,
+    image = "/homepage/1.jpg", // Default social share image
+    canonicalURL = new URL(Astro.url.pathname, Astro.site).href
 } = Astro.props;
+
+// 2. Construct Page Title
+const fullTitle = `${title} | ${siteName}`;
 ---
 
 <!doctype html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title} | Makto Distribution</title>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+        <title>{fullTitle}</title>
+		<meta name="description" content={description} />
+        <link rel="canonical" href={canonicalURL} />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Makto Distribution" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalURL} />
+        <meta property="og:title" content={fullTitle} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={new URL(image, Astro.url)} />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={canonicalURL} />
+        <meta property="twitter:title" content={fullTitle} />
+        <meta property="twitter:description" content={description} />
+        <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 	</head>
 	<body class="bg-[var(--color-white)]">
 		<Header />

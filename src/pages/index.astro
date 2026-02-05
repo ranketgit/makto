@@ -8,10 +8,12 @@ import ServicesDetail from '../components/ServicesDetail.astro';
 import CorporateValues from '../components/CorporateValues.astro';
 import WhyChooseUs from '../components/WhyChooseUs.astro';
 import EngagementBlock from '../components/EngagementBlock.astro';
-const pageTitle = "Accueil";
 ---
 
-<Layout title={pageTitle}>
+<Layout 
+    title="Accueil - Distribution & Logistique en Afrique" 
+    description="Makto Distribution : Leader en solutions de climatisation, plomberie et énergie au Sénégal et en Afrique de l'Ouest. Distributeur officiel Daikin, DAB, Vitra."
+>
 	<Hero />
     <div class="bg-[var(--color-bg-light)]">
         <ServicesOverview />

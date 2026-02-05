@@ -11,9 +11,10 @@ const posts = (await getCollection('news')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
-
-<Layout title={pageTitle} description="Les dernières nouvelles, conseils techniques et mises à jour de Makto Distribution.">
-    
+<Layout 
+    title="Actualités & Conseils Techniques" 
+    description="Les dernières innovations en climatisation, conseils de maintenance et actualités de Makto Distribution."
+>
     <PageHero 
         title="Actualités & Tech Tips" 
         subtitle="Restez informés des dernières innovations, de nos événements et des conseils de nos experts."
